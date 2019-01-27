@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="play-zone">
-    <div class="score">{{ slots$ | async | json }}</div>
+    <div class="score">{{ rewardText }}</div>
     <div class="slots">
       <div class="slot">Slot A: {{ (slots$ | async).A }}</div>
       <div class="slot">Slot B: {{ (slots$ | async).B }}</div>
