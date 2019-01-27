@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "ng-slot"
+  "defaultProject": "ng-slot",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

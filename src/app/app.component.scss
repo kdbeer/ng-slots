@@ -1,0 +1,32 @@
+.play-zone {
+  height: 70%;
+
+  background-color: #ffffff;
+  padding: 0px 200px;
+
+  .slots {
+    height: 60%;
+    color: #ffffff;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+    padding-top: 100px;
+  }
+
+  .slot {
+    background-color: black;
+  }
+
+}
+
+.control {
+  margin-top: 20px;
+  float: right;
+}
+
+button {
+  width: 100px;
+  height: 100px;
+}

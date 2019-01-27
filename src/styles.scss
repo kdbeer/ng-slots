@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  padding: 0;
+  margin: 0;
+  // background-color: burlywood;
+  background-image: url('assets/bg.jpg');
+}
+
+.wrapper {
+  max-width: 1300px;
+  height: 80vh;
+  background-color: darkgoldenrod;
+  margin: 10vh auto;
+  padding: 15px;
+  border-radius: 10px;
+}
