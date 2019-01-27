@@ -22,12 +22,14 @@
     </div>
   </div>
   <div class="play-zone">
-    <div class="score">score</div>
+    <div class="score">{{ slots$ | async | json }}</div>
     <div class="slots">
-      <div class="slot">Slot A</div>
-      <div class="slot">Slot B</div>
-      <div class="slot">Slot C</div>
+      <div class="slot">Slot A: {{ (slots$ | async).A }}</div>
+      <div class="slot">Slot B: {{ (slots$ | async).B }}</div>
+      <div class="slot">Slot C: {{ (slots$ | async).C }}</div>
     </div>
   </div>
-  <div class="footer"><button class="roll-button">ROLL</button></div>
+  <div class="footer">
+    <button (click)="rolled()" class="roll-button">ROLL</button>
+  </div>
 </section>
