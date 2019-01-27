@@ -3,14 +3,28 @@ body {
   padding: 0;
   margin: 0;
   // background-color: burlywood;
-  background-image: url('assets/bg.jpg');
+  background-image: url('assets/bg2.jpeg');
+  background-size: cover;
 }
 
 .wrapper {
-  max-width: 1300px;
-  height: 80vh;
-  background-color: darkgoldenrod;
-  margin: 10vh auto;
-  padding: 15px;
-  border-radius: 10px;
+  height: 100vh;
+
+  .header {
+    background-color: black;
+    background-color: rgba($color: #a3e7de, $alpha: 0.35);
+    height: 7vh;
+    padding: 0px;
+    border-bottom: 1px solid rgba($color: #a3e7de, $alpha: 0.5);
+  }
+
+  .play-zone {
+    height: 83vh;
+  }
+
+  .footer {
+    height: 10vh;
+    background-color: rgba($color: #9d4533, $alpha: 0.5);
+    border-top: 1px solid rgba($color: #9d4533, $alpha: 0.5);
+  }
 }
