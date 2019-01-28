@@ -78,13 +78,12 @@ export class AppComponent implements OnInit {
     this.slots$ = this.store$.pipe(select(selectAllSlots));
 
     this.store$.pipe(select(selectAllSlots)).subscribe(res => {
-      // this.clearInterval();
       this.rewardText = this.checkReward(res);
       console.log(res);
       // this.animateSpin(res.A, res.B, res.C);
       // this.animateSpinByCard(this.cards, res.A);
-      this.animateSpinSlotsC(this.cardsDeskA, res.A);
-      this.animateSpinSlotsC(this.cardsDeskB, res.B);
+      this.animateSpinSlotsA(this.cardsDeskA, res.A);
+      this.animateSpinSlotsB(this.cardsDeskB, res.B);
       this.animateSpinSlotsC(this.cardsDeskC, res.C);
     });
   }
