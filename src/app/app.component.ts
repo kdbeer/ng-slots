@@ -95,7 +95,7 @@ export class AppComponent implements OnInit {
   checkReward(m: Slots): string {
     const rewards = rewardList
       .map(val => {
-        if (val.A === m.A && val.B === m.B && val.C === val.C) {
+        if (val.A === m.A && val.B === m.B && val.C === m.C) {
           return val.reward;
         }
       })
