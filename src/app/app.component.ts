@@ -47,7 +47,6 @@ export class AppComponent implements OnInit {
 
   rewardText = '';
 
-  currentIndex = 0;
   intervalInstanceA;
   intervalInstanceB;
   intervalInstanceC;
@@ -79,7 +78,7 @@ export class AppComponent implements OnInit {
     this.slots$ = this.store$.pipe(select(selectAllSlots));
 
     this.store$.pipe(select(selectAllSlots)).subscribe(res => {
-      this.clearInterval();
+      // this.clearInterval();
       this.rewardText = this.checkReward(res);
       console.log(res);
       // this.animateSpin(res.A, res.B, res.C);
@@ -117,7 +116,6 @@ export class AppComponent implements OnInit {
 
     clearInterval(this.intervalInstanceA);
     this.intervalInstanceA = setInterval(() => {
-      console.log('CRI: ' + slotIndex + ' ' + 'IA: ' + currentIndex);
       slotIndex++;
       if (slotIndex === this.cardsDeskA.length) {
         slotIndex = 0;
@@ -129,6 +127,10 @@ export class AppComponent implements OnInit {
         this.cardsDeskA[this.cardsDeskA.length - 1].state = 'out';
       }
       this.cardsDeskA[slotIndex].state = 'in';
+      if (slotIndex === currentIndex) {
+        clearInterval(this.intervalInstanceA);
+        return;
+      }
     }, 100);
     return;
   }
@@ -140,7 +142,6 @@ export class AppComponent implements OnInit {
 
     clearInterval(this.intervalInstanceB);
     this.intervalInstanceB = setInterval(() => {
-      console.log('CRI: ' + slotIndex + ' ' + 'IA: ' + currentIndex);
       slotIndex++;
       if (slotIndex === this.cardsDeskB.length) {
         slotIndex = 0;
@@ -152,6 +153,10 @@ export class AppComponent implements OnInit {
         this.cardsDeskB[this.cardsDeskB.length - 1].state = 'out';
       }
       this.cardsDeskB[slotIndex].state = 'in';
+      if (slotIndex === currentIndex) {
+        clearInterval(this.intervalInstanceB);
+        return;
+      }
     }, 100);
     return;
   }
@@ -163,7 +168,7 @@ export class AppComponent implements OnInit {
 
     clearInterval(this.intervalInstanceC);
     this.intervalInstanceC = setInterval(() => {
-      console.log('CRI: ' + slotIndex + ' ' + 'IA: ' + currentIndex);
+      // console.log('CRI: ' + slotIndex + ' ' + 'IA: ' + currentIndex);
       slotIndex++;
       if (slotIndex === this.cardsDeskC.length) {
         slotIndex = 0;
@@ -175,8 +180,11 @@ export class AppComponent implements OnInit {
         this.cardsDeskC[this.cardsDeskC.length - 1].state = 'out';
       }
       this.cardsDeskC[slotIndex].state = 'in';
+      if (slotIndex === currentIndex) {
+        clearInterval(this.intervalInstanceC);
+        return;
+      }
     }, 100);
-    return;
   }
 
   clearInterval() {
