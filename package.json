@@ -4,6 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "build-dev": "ng build --prod --aot --build-optimizer -c develop",
+    "build-staging": "ng build --prod --aot --build-optimizer -c staging",
+    "build-prod": "ng build --prod --aot --build-optimizer -c production",
+    "build-aws": "aws s3 cp ./dist s3://ng-slots/ --recursive --acl public-read --region ap-southeast-1",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
