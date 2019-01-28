@@ -24,9 +24,30 @@
   <div class="play-zone">
     <div class="score">{{ rewardText }}</div>
     <div class="slots">
-      <div class="slot">Slot A: {{ (slots$ | async).A }}</div>
-      <div class="slot">Slot B: {{ (slots$ | async).B }}</div>
-      <div class="slot">Slot C: {{ (slots$ | async).C }}</div>
+      <div class="slot">
+        <img
+          *ngFor="let card of cardsDeskA"
+          [@cardSpinner]="card.state"
+          class="card"
+          src="{{ card.value }}"
+        />
+      </div>
+      <div class="slot">
+        <img
+          *ngFor="let card of cardsDeskB"
+          [@cardSpinner]="card.state"
+          class="card"
+          src="{{ card.value }}"
+        />
+      </div>
+      <div class="slot">
+        <img
+          *ngFor="let card of cardsDeskC"
+          [@cardSpinner]="card.state"
+          class="card"
+          src="{{ card.value }}"
+        />
+      </div>
     </div>
   </div>
   <div class="footer">

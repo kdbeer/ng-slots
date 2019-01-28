@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  SlotSize: 8
+  SlotSize: 8,
+  cardImages: [],
+  limit: 10,
 };
 
 /*

@@ -19,9 +19,9 @@ export class GameEffects {
     map(() => {
       console.log(this.env.SlotSize);
       const slots: Slots = {
-        A: this.getRandomArbitrary(1, this.env.SlotSize),
-        B: this.getRandomArbitrary(1, this.env.SlotSize),
-        C: this.getRandomArbitrary(1, this.env.SlotSize),
+        A: this.getRandomArbitrary(0, this.env.SlotSize - 1),
+        B: this.getRandomArbitrary(0, this.env.SlotSize - 1),
+        C: this.getRandomArbitrary(0, this.env.SlotSize - 1),
       };
 
       return new UpdateRandomNumber({ slots: slots });

@@ -10,10 +10,10 @@
 
   .slot {
     background-color: rgba($color: black, $alpha: 0.3);
-    padding: 10px;
     width: 280px;
     height: 400px;
     margin: 0px auto;
+    overflow: hidden;
   }
 }
 
@@ -75,7 +75,7 @@ button {
 .roll-button {
   width: 150px;
   height: 150px;
-  transform: translateY(-60%);
+  transform: translateY(-70%);
   border: 10px solid #fcf988;
   border-radius: 50%;
   font-size: 40px;
@@ -147,4 +147,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.card {
+  width: 100%;
 }

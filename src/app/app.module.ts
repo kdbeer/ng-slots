@@ -9,11 +9,13 @@ import { environment } from '../environments/environment';
 import * as fromGame from './game.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { GameEffects } from './game.effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreModule.forFeature('game', fromGame.reducer),
