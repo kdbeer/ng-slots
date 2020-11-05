@@ -6,7 +6,7 @@ import {
   UpdateRandomNumber,
 } from './game.actions';
 import { Slots } from '.';
-import { map } from 'rxjs/internal/operators/map';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable()
