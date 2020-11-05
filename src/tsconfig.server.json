@@ -6,7 +6,7 @@
     "target": "es2016",
     "types": ["node"]
   },
-  "files": ["main.server.ts", "server.ts"],
+  "files": ["main.server.ts", "../server.ts"],
   "angularCompilerOptions": {
     "entryModule": "./app/app.server.module#AppServerModule"
   }

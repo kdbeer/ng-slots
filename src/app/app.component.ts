@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.slots$ = this.store$.pipe(select(selectAllSlots));
 
-    this.store$.pipe(select(selectAllSlots)).subscribe(res => {
+    this.store$.pipe(select(selectAllSlots)).subscribe((res) => {
       this.rewardText = this.checkReward(res);
       console.log(res);
       // this.animateSpin(res.A, res.B, res.C);
@@ -94,12 +94,12 @@ export class AppComponent implements OnInit {
 
   checkReward(m: Slots): string {
     const rewards = rewardList
-      .map(val => {
+      .map((val) => {
         if (val.A === m.A && val.B === m.B && val.C === m.C) {
           return val.reward;
         }
       })
-      .filter(val => val !== undefined);
+      .filter((val) => val !== undefined);
 
     if (rewards.length > 0) {
       return rewards[0];
@@ -109,7 +109,7 @@ export class AppComponent implements OnInit {
   }
 
   animateSpinSlotsA(slots, currentIndex) {
-    slots.forEach(slot => (slot.state = 'out'));
+    slots.forEach((slot) => (slot.state = 'out'));
     let slotIndex = currentIndex;
     slots[currentIndex].state = 'in';
 
@@ -135,7 +135,7 @@ export class AppComponent implements OnInit {
   }
 
   animateSpinSlotsB(slots, currentIndex) {
-    slots.forEach(slot => (slot.state = 'out'));
+    slots.forEach((slot) => (slot.state = 'out'));
     let slotIndex = currentIndex;
     slots[currentIndex].state = 'in';
 
@@ -161,7 +161,7 @@ export class AppComponent implements OnInit {
   }
 
   animateSpinSlotsC(slots, currentIndex) {
-    slots.forEach(slot => (slot.state = 'out'));
+    slots.forEach((slot) => (slot.state = 'out'));
     let slotIndex = currentIndex;
     slots[currentIndex].state = 'in';
 
